@@ -1,0 +1,21 @@
+SDL_OpenGL_App Notes
+	
+V1: Character Movement
+	First tests with moving a character around seperate from the camera
+
+V2: Re-Organize
+	Cleaned up organization
+	
+V3: vertexArrays
+	got rid of basic slow gl_Begin and gl_End calls, now using glVertexPointer, glColorPointer, and glDrawArrays to get things done
+
+V4: staticShapesContainer+colorGradients
+	Created a static vector to hold all shapes, this simplifies shape creation and drawing to single calls with automated setup and 	destruction
+
+V5: drawAll_withSingleCall - INCOMPLETE
+	created static allFaces and allFaceColors vectors to compile all shape vectors together and draw at once, for some reason can 		only get the first shape to draw. Will come back to later, reverting back to seperate draw calls for each shape for now.
+
+V6: MovementClass
+	Clean up shapes class and return to 1 seperate draw call for each shape for now (still all activated by Shape::drawAll() )
+	Add a movement class that can accept a shape object to bind movement controls
+
